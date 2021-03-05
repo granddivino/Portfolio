@@ -9,19 +9,17 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
-import Avatar from "@material-ui/core/Avatar";
 import Divider from "@material-ui/core/Divider";
 import Typography from "@material-ui/core/Typography";
 import Menu from "@material-ui/icons/Menu";
-import AssignmentInd from "@material-ui/icons/AssignmentInd";
 import Home from "@material-ui/icons/Home";
+import AssignmentInd from "@material-ui/icons/AssignmentInd";
 import Apps from "@material-ui/icons/Apps";
 import ContactMail from "@material-ui/icons/ContactMail";
 import EmojiPeople from "@material-ui/icons/EmojiPeople";
 import Grade from "@material-ui/icons/Grade";
 import { makeStyles } from "@material-ui/core/styles";
-import avatar from "../avatar2.png";
-
+// import avatar from "../avatar2.png";
 import Footer from "../components/Footer";
 
 const useStyles = makeStyles((theme) => ({
@@ -37,23 +35,26 @@ const useStyles = makeStyles((theme) => ({
   },
   menuSliderContainer: {
     width: 250,
-    background: "DimGray",
+    background: "DarkOrange",
     height: "100%",
   },
-  avatar: {
-    display: "block",
-    margin: "0.5rem auto",
-    width: theme.spacing(13),
-    height: theme.spacing(13),
-  },
+  // avatar: {
+  //   display: "block",
+  //   margin: "0.5rem auto",
+  //   width: theme.spacing(13),
+  //   height: theme.spacing(13),
+  // },
   listItem: {
     color: "Snow",
   },
+  resume: {
+    color: "Snow",
+  }
 }));
 
 const menuItems = [
   { listIcon: <Home />, listText: "Home", listPath: "/" },
-  { listIcon: <AssignmentInd />, listText: "Resume", listPath: "/resume" },
+  // { listIcon: <AssignmentInd />, listText: "Resume", listPath: "/resume" },
   { listIcon: <Apps />, listText: "Projects", listPath: "/portfolio" },
   { listIcon: <EmojiPeople />, listText: "About Me"},
   { listIcon: <Grade />, listText: "Skills"},
@@ -67,7 +68,7 @@ const Navbar = () => {
 
   const sideList = () => (
     <Box className={classes.menuSliderContainer} component="div">
-      <Avatar className={classes.avatar} src={avatar} alt="Gabriel Go" />
+      {/* <Avatar className={classes.avatar} src={avatar} alt="Gabriel Go" /> */}
       <Divider />
       <List>
         {menuItems.map((item, i) => (
@@ -99,6 +100,15 @@ const Navbar = () => {
             </IconButton>
             <Typography variant="h5" className={classes.title}>
               Menu
+            </Typography>
+            <IconButton>
+              <AssignmentInd />
+            </IconButton>
+            <Typography variant="button" className="resume">
+            <a className="btn" 
+              href="https://drive.google.com/file/d/1qYwQH3zvVgcroFkgjblsBlg6D6NfJwUH/view?usp=sharing">
+             My Resume
+            </a>
             </Typography>
           </Toolbar>
         </AppBar>

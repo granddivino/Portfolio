@@ -10,12 +10,12 @@ import CardMedia from "@material-ui/core/CardMedia";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 
-import project1 from "../images/html-css-javascript-lg.jpg";
-import project2 from "../images/html-css-javascript.jpg";
-import project3 from "../images/javascript-fullstack.jpg";
-import project4 from "../images/mern-stack.jpg";
-import project5 from "../images/react-redux.jpg";
-import project6 from "../images/react.png";
+import project1 from "../images/KarenFam.jpg";
+import project2 from "../images/FiveSomewhere.jpg";
+import project3 from "../images/Petflix.jpg";
+import project4 from "../images/LGBTQ.jpg";
+// import project5 from "../images/react-redux.jpg";
+// import project6 from "../images/react.png";
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
@@ -23,60 +23,54 @@ const useStyles = makeStyles((theme) => ({
     height: "100%",
   },
   cardContainer: {
-    maxWidth: 345,
+    maxWidth: 375,
     margin: "3rem auto",
   },
 }));
 
 const projects = [
   {
-    name: "Project 1",
-    description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis
-    consequatur magni quod nesciunt necessitatibus molestiae non
-    eligendi, magnam est aliquam recusandae? Magnam soluta minus
-    iste alias sunt veritatis nisi dolores!`,
+    name: "Unhinged",
+    description: `A short comedic text-based adventure game inspired by "Choose Your Own Adventure",\
+    and the modern day "Karen".`,
     image: project1,
+    href: "https://granddivino.github.io/Unhinged/",
+    href2: "https://github.com/granddivino/Unhinged"
   },
   {
-    name: "Project 2",
-    description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis\
-    consequatur magni quod nesciunt necessitatibus molestiae non\
-    eligendi, magnam est aliquam recusandae? Magnam soluta minus\
-    iste alias sunt veritatis nisi dolores!`,
+    name: "Five O' Somewhere",
+    description: `An alcoholic cookbook that tells you exactly what ingredients you need, and directions\
+    to make the perfect drink!`,
     image: project2,
+    href: "https://five-o-somewhere.herokuapp.com/auth/login",
+    href2: "https://github.com/granddivino/Five-Somewhere"
   },
   {
-    name: "Project 3",
-    description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis\
-    consequatur magni quod nesciunt necessitatibus molestiae non\
-    eligendi, magnam est aliquam recusandae? Magnam soluta minus\
-    iste alias sunt veritatis nisi dolores!`,
+    name: "Petflix",
+    description: `Collaboration project with former colleagues to make an Instagram inspired timeline\
+    made for uploading pictures of your pets!`,
     image: project3,
+    href: "http://petflix.surge.sh/",
+    href2: "https://github.com/granddivino/Team-4-frontend"
   },
   {
-    name: "Project 4",
-    description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis\
-    consequatur magni quod nesciunt necessitatibus molestiae non\
-    eligendi, magnam est aliquam recusandae? Magnam soluta minus\
-    iste alias sunt veritatis nisi dolores!`,
+    name: "Asylum",
+    description: `Passion project dedicated to posting LGBTQ events in your area, or anything related\
+    to the community that is inspiring, or can a helpful resource.`,
     image: project4,
+    href: "",
+    href2: "https://github.com/granddivino/Asylum"
   },
-  {
-    name: "Project 5",
-    description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis\
-    consequatur magni quod nesciunt necessitatibus molestiae non\
-    eligendi, magnam est aliquam recusandae? Magnam soluta minus\
-    iste alias sunt veritatis nisi dolores!`,
-    image: project5,
-  },
-  {
-    name: "Project 6",
-    description: `Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quis\
-    consequatur magni quod nesciunt necessitatibus molestiae non\
-    eligendi, magnam est aliquam recusandae? Magnam soluta minus\
-    iste alias sunt veritatis nisi dolores!`,
-    image: project6,
-  },
+  // {
+  //   name: "Project 5",
+  //   description: ``,
+  //   image: project5,
+  // },
+  // {
+  //   name: "Project 6",
+  //   description: ``,
+  //   image: project6,
+  // },
 ];
 
 const Portfolio = () => {
@@ -105,11 +99,11 @@ const Portfolio = () => {
                 </CardContent>
               </CardActionArea>
               <CardActions>
-                <Button size="small" color="primary">
-                  Share
+                <Button size="small" color="primary" href={project.href}>
+                  Open App
                 </Button>
-                <Button size="small" color="primary">
-                  Live Demo
+                <Button size="small" color="primary" href={project.href2}>
+                  View Code
                 </Button>
               </CardActions>
             </Card>
