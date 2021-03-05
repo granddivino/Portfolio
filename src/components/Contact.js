@@ -5,18 +5,18 @@ import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
-
 import Send from "@material-ui/icons/Send";
+import emailjs from 'emailjs-com';
 
 const useStyles = makeStyles((theme) => ({
   contactContainer: {
-    background: "#233",
+    background: "DimGray",
     height: "100vh",
   },
   heading: {
-    color: "Snow",
+    color: "DarkOrange",
     textAlign: "center",
-    textTransform: "uppercase",
+    // textTransform: "uppercase",
     marginBottom: "1rem",
   },
   form: {
@@ -26,12 +26,13 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
   },
   input: {
-    color: "#fff",
+    textAlign: "center",
+    color: "Snow",
   },
   button: {
     marginTop: "1rem",
-    color: "Snow",
-    borderColor: "tan",
+    color: "DarkOrange",
+    borderColor: "DarkOrange",
   },
   field: {
     margin: "1rem 0rem",
@@ -41,42 +42,63 @@ const useStyles = makeStyles((theme) => ({
 const InputField = withStyles({
   root: {
     "& label.Mui-focused": {
-      color: "Snow",
+      color: "DarkOrange",
     },
     "& label": {
-      color: "snow",
+      color: "DarkOrange",
     },
     "& .MuiOutlinedInput-root": {
       "& fieldset": {
-        borderColor: "tan",
+        borderColor: "DarkOrange",
       },
       "&:hover fieldset": {
-        borderColor: "Snow",
+        borderColor: "DarkOrange",
       },
       "&.Mui-focused fieldset": {
         color: "#fff",
-        borderColor: "Snow",
+        borderColor: "DarkOrange",
       },
     },
   },
 })(TextField);
 
+
+function sendEmail(e) {
+  e.preventDefault();
+
+  emailjs.sendForm('service_l9uxeyl', 'template_s9vu955', e.target, 'user_VJA80iUmRaHlZlcM0kLLh')
+    .then((result) => {
+        // window.location.reload();
+        console.log(result.text);
+    }, (error) => {
+        console.log(error.text);
+    });
+}
+
 const Contact = () => {
   const classes = useStyles();
+
+
+
   return (
     <Box component="div" className={classes.contactContainer}>
       <Grid container justify="center">
-        <Box component="form" className={classes.form}>
-          <Typography variant="h5" className={classes.heading}>
-            Contact me!
+      <form className="contact-form" onSubmit={sendEmail}>
+        <Box component="form" className={classes.form} >
+          <Typography variant="h4" className={classes.heading}>
+            Contact Gabriel
           </Typography>
           <InputField
+            type="text"
+            name="user_name"
             fullWidth={true}
             label="Name"
             variant="outlined"
             inputProps={{ className: classes.input }}
           />
           <InputField
+            type="Email"
+            name="user_email"
             fullWidth={true}
             label="Email"
             variant="outlined"
@@ -84,6 +106,7 @@ const Contact = () => {
             className={classes.field}
           />
           <InputField
+            name="Message"
             fullWidth={true}
             label="Message"
             variant="outlined"
@@ -92,6 +115,8 @@ const Contact = () => {
             inputProps={{ className: classes.input }}
           />
           <Button
+            type="Submit"
+            value="Send"
             variant="outlined"
             fullWidth={true}
             endIcon={<Send />}
@@ -100,6 +125,7 @@ const Contact = () => {
             Send
           </Button>
         </Box>
+        </form>
       </Grid>
     </Box>
   );
