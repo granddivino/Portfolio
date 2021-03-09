@@ -79,8 +79,6 @@ function sendEmail(e) {
 const Contact = () => {
   const classes = useStyles();
 
-
-
   return (
     <Box component="div" className={classes.contactContainer}>
       <Grid container justify="center">

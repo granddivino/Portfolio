@@ -8,12 +8,11 @@ import AppBar from "@material-ui/core/AppBar";
 import Apps from "@material-ui/icons/Apps";
 import AssignmentInd from "@material-ui/icons/AssignmentInd";
 import Box from "@material-ui/core/Box";
-import Button from "@material-ui/core/Button";
 import ContactMail from "@material-ui/icons/ContactMail";
 import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
 import EmojiPeople from "@material-ui/icons/EmojiPeople";
-import Grade from "@material-ui/icons/Grade";
+// import Grade from "@material-ui/icons/Grade";
 import Home from "@material-ui/icons/Home";
 import IconButton from "@material-ui/core/IconButton";
 import List from "@material-ui/core/List";
@@ -25,6 +24,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 
 
+
 const useStyles = makeStyles((theme) => ({
   appbar: {
     background: "#222",
@@ -32,9 +32,15 @@ const useStyles = makeStyles((theme) => ({
   },
   menu: {
     color: "Snow",
+    "&:hover": {
+      backgroundColor: "#222"
+  }
   },
   title: {
     color: "Snow",
+    "&:hover": {
+      backgroundColor: "#222"
+  }
   },
   menuSliderContainer: {
     width: 250,
@@ -50,19 +56,19 @@ const useStyles = makeStyles((theme) => ({
   listItem: {
     color: "Snow",
   },
-  resume: {
-    color: "Snow",
-  }
+
+  btn: {
+    display: "none",
+    }
+
 }));
 
 const menuItems = [
   { listIcon: <Home />, listText: "Home", listPath: "/" },
-  //<Button target="_blank" href="https://drive.google.com/file/d/1qYwQH3zvVgcroFkgjblsBlg6D6NfJwUH/view?usp=sharing">
   //{ listIcon: <AssignmentInd />, listText: "Resume", listPath: "/resume" },
-  //</Button>
   { listIcon: <Apps />, listText: "Projects", listPath: "/portfolio" },
-  { listIcon: <EmojiPeople />, listText: "About Me"},
-  { listIcon: <Grade />, listText: "Skills"},
+  { listIcon: <EmojiPeople />, listText: "About Me", listPath: "/about" },
+  // { listIcon: <Grade />, listText: "Skills"},
   { listIcon: <ContactMail />, listText: "Contact", listPath: "/contact" },
 ];
 
@@ -99,7 +105,7 @@ const Navbar = () => {
     <React.Fragment>
       <Box component="nav">
         <AppBar position="static" className={classes.appbar}>
-          <Toolbar>
+          <Toolbar className={classes.tr}>
             <IconButton onClick={() => setOpen(true)}>
               <Menu className={classes.menu} />
             </IconButton>
@@ -107,12 +113,12 @@ const Navbar = () => {
               Menu
             </Typography>
             <IconButton>
-              <AssignmentInd />
+              <AssignmentInd className={classes.menu} />
             </IconButton>
-            <Typography variant="button" className="resume">
+            <Typography variant="h5" className={classes.title}>
             <a className="btn" 
               href="https://drive.google.com/file/d/1qYwQH3zvVgcroFkgjblsBlg6D6NfJwUH/view?usp=sharing">
-             My Resume
+             Resume
             </a>
             </Typography>
           </Toolbar>

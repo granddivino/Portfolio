@@ -21,7 +21,7 @@ import project4 from "../images/LGBTQ.jpg";
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
     background: "#233",
-    height: "100%",
+    height: "100vw",
   },
   cardContainer: {
     maxWidth: 375,
@@ -77,9 +77,10 @@ const projects = [
 const Portfolio = () => {
   const classes = useStyles();
   return (
+    
     <Box component="div" className={classes.mainContainer}>
       <Grid container justify="center">
-        {/* Projects */}
+      {/* <h1>Projects</h1> */}
         {projects.map((project, i) => (
           <Grid item xs={12} sm={8} md={4} key={i}>
             <Card className={classes.cardContainer}>
