@@ -73,7 +73,7 @@ const Contact = () => {
 
     emailjs.sendForm('service_l9uxeyl', 'template_s9vu955', e.target, 'user_VJA80iUmRaHlZlcM0kLLh')
       .then((result) => {
-          console.log(result.text);
+          window.location.reload();
       }, (error) => {
           console.log(error.text);
       });
@@ -83,9 +83,9 @@ const Contact = () => {
     <Box component="div" className={classes.contactContainer}>
       <Grid container justify="center">
       <form className="contact-form" onSubmit={sendEmail}>
-        <Box component="form" className={classes.form}>
+        <Box component="div" className={classes.form}>
           <Typography variant="h4" className={classes.heading}>
-            Reach out!
+            Get in touch with me!
           </Typography>
             <InputField type="hidden" name="contact_number" />
             <InputField 
@@ -120,7 +120,6 @@ const Contact = () => {
               className={classes.button}>
               Send
             </Button>
-            
         </Box>
       </form>
       </Grid>

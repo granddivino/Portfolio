@@ -20,12 +20,15 @@ import project4 from "../images/LGBTQ.jpg";
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
-    background: "#233",
+    background: "DimGray",
     height: "100vw",
   },
   cardContainer: {
     maxWidth: 375,
     margin: "3rem auto",
+  },
+  title: {
+    color: "DarkOrange"
   },
 }));
 
@@ -79,8 +82,10 @@ const Portfolio = () => {
   return (
     
     <Box component="div" className={classes.mainContainer}>
+      <Typography variant="h2" color="textSecondary" align="center" className={classes.title}>
+           Projects
+      </Typography> 
       <Grid container justify="center">
-      {/* <h1>Projects</h1> */}
         {projects.map((project, i) => (
           <Grid item xs={12} sm={8} md={4} key={i}>
             <Card className={classes.cardContainer}>

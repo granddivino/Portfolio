@@ -23,6 +23,9 @@ const useStyles = makeStyles((theme) => ({
     color: "Snow",
     textTransform: "uppercase",
   },
+  copyright: {
+    color: "Gold",
+  },
   typedContainer: {
     position: "absolute",
     top: "50%",
@@ -58,7 +61,12 @@ const Header = () => {
           loop
         />
       </Typography>
+      <Typography className={classes.copyright} variant="h6" fontWeight={500}>
+      © Gabriel Go 2021
+      </Typography>
+    
     </Box>
+    
   );
 };
 
