@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles, withStyles } from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
+import Grid from "@material-ui/core/Grid"
 import TextField from "@material-ui/core/TextField";
 import Typography from "@material-ui/core/Typography";
 import Button from "@material-ui/core/Button";
@@ -11,6 +12,7 @@ const useStyles = makeStyles((theme) => ({
   contactContainer: {
     background: "DimGray",
     height: "100vh",
+    padding: "10",
 
   },
   heading: {
@@ -26,7 +28,7 @@ const useStyles = makeStyles((theme) => ({
     position: "absolute",
   },
   input: {
-    textAlign: "center",
+    textAlign: "Left",
     color: "Snow",
   },
   button: {
@@ -79,32 +81,34 @@ const Contact = () => {
 
   return (
     <Box component="div" className={classes.contactContainer}>
+      <Grid container justify="center">
       <form className="contact-form" onSubmit={sendEmail}>
-        <Box component="div" className={classes.form}>
+        <Box component="form" className={classes.form}>
           <Typography variant="h4" className={classes.heading}>
             Reach out!
           </Typography>
             <InputField type="hidden" name="contact_number" />
-            <label>Name</label>
             <InputField 
               type="text" 
-              name="user_name"  
+              name="user_name"
+              label="Name"
               required="true" 
               fullWidth={true} 
               variant="outlined" 
               inputProps={{ className: classes.input }}  />
-            <label>Email</label>
             <InputField 
               type="email" 
-              name="user_email" 
+              name="user_email"
+              label="Email"
               required="true" 
               fullWidth={true} 
               variant="outlined" 
-              inputProps={{ className: classes.input }} />
-            <label>Message</label>
+              inputProps={{ className: classes.input }}
+              className={classes.field} />
             <InputField 
               name="message" 
-              required="true" 
+              required="true"
+              label="Message"
               fullWidth={true} 
               variant="outlined" 
               multiline
@@ -115,9 +119,11 @@ const Contact = () => {
               endIcon={<Send />}
               className={classes.button}>
               Send
-           </Button>
+            </Button>
+            
         </Box>
       </form>
+      </Grid>
     </Box>
   )
 }

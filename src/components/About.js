@@ -1,8 +1,9 @@
 import React from "react";
 import { makeStyles} from "@material-ui/core/styles";
 import Box from "@material-ui/core/Box";
-import Gabe from "../images/Gabe.jpg"
+import Gabe from "../images/Gabe.jpg";
 import Grid from "@material-ui/core/Grid";
+import Typography from "@material-ui/core/Typography";
 import { FaHtml5, FaReact, FaNodeJs, FaCss3Alt, FaPython, FaGithub, FaDatabase, FaFlask } from "react-icons/fa";
 import { SiJavascript, SiMongodb, SiPostgresql, SiMaterialUi } from "react-icons/si";
 
@@ -15,6 +16,9 @@ const useStyles = makeStyles((theme) => ({
     },
     aboutMe: {
       // backgroundColor:"Gold"  
+    },
+    paragraph: {
+      fontSize: '1rem'
     }
 }));  
 
@@ -27,16 +31,19 @@ const About = () => {
         <Grid container alignItems="center" justify="center" style={{ minHeight: '90vh' }}>
           <div className="row">
             <Box component="div" className={classes.aboutMe} width={1100} height={100}>
-            <div className="col l4">
-            <h1 className="title center-align">What Gabriel Go is About</h1>
+            <div className="col l5">
+            <h1 className="title center-align">Who is Gabriel Go?</h1>
             <div className="about">
-            As a driven Software Engineer, I’m constantly looking for innovative ways to expand my knowledge of 
-            programming techniques. My calling lies in front end development as I have a unique vision for aesthetic, 
-            and conveying my product vision through my work. A keen eye for originality is what makes me an asset as a 
-            developer and team member.
-            <div className="about">I'm in search of a collaborative team that is in the
-              business of pushing boundaries with code.
+            <Typography className={classes.paragraph}>
+            <p>As a growing Software Engineer with over 10 years of previous client facing relations, thinking
+            of ways to exercise my creativity has become second nature. I believe that I have a unique vision for
+            aesthetic; how I believe what the person on the other side of the screen should see. I'm always 
+            wondering how to translate what I see in my head translate into code.</p>
+            <div className="about">
+            <p>I'm looking for opportunities that will challenge me and teach me to become a better developer, all
+            while being able to share that vision. </p>
             </div>
+            </Typography>
             </div>
           </div>
           

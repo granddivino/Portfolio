@@ -6,8 +6,9 @@ import Footer from "../components/Footer";
 import { makeStyles } from "@material-ui/core/styles";
 import AppBar from "@material-ui/core/AppBar";
 import Apps from "@material-ui/icons/Apps";
-import AssignmentInd from "@material-ui/icons/AssignmentInd";
+import FolderSpecial from "@material-ui/icons/FolderSpecial";
 import Box from "@material-ui/core/Box";
+import Button from "@material-ui/core/Button";
 import ContactMail from "@material-ui/icons/ContactMail";
 import Divider from "@material-ui/core/Divider";
 import Drawer from "@material-ui/core/Drawer";
@@ -105,21 +106,21 @@ const Navbar = () => {
     <React.Fragment>
       <Box component="nav">
         <AppBar position="static" className={classes.appbar}>
-          <Toolbar className={classes.tr}>
+          <Toolbar>
             <IconButton onClick={() => setOpen(true)}>
               <Menu className={classes.menu} />
             </IconButton>
-            <Typography variant="h5" className={classes.title}>
+            <Typography variant="h6" className={classes.title}>
               Menu
             </Typography>
-            <IconButton>
-              <AssignmentInd className={classes.menu} />
+            <IconButton disabled="true">
+              <FolderSpecial className={classes.menu} />
             </IconButton>
             <Typography variant="h5" className={classes.title}>
-            <a className="btn" 
-              href="https://drive.google.com/file/d/1qYwQH3zvVgcroFkgjblsBlg6D6NfJwUH/view?usp=sharing">
-             Resume
-            </a>
+            <Button className={classes.title}
+            href="https://drive.google.com/file/d/1qYwQH3zvVgcroFkgjblsBlg6D6NfJwUH/view?usp=sharing" >
+            Resume
+            </Button>
             </Typography>
           </Toolbar>
         </AppBar>
