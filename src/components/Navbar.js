@@ -118,7 +118,7 @@ const Navbar = () => {
             </IconButton>
             <Typography variant="h5" className={classes.title}>
             <Button className={classes.title}
-            href="https://drive.google.com/file/d/1qYwQH3zvVgcroFkgjblsBlg6D6NfJwUH/view?usp=sharing" >
+            href="https://drive.google.com/file/d/1_u-dpAklvMbvXz7-m5pdZY_-MBX1Avqw/view?usp=sharing" >
             Resume
             </Button>
             </Typography>
