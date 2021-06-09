@@ -67,7 +67,7 @@ const projects = [
   },
   {
     name: "Sorting Through Chaos",
-    description: `A simple single page application project pondering the thought process, and how or\ 
+    description: `A simple single page application project pondering the thought process, and how or
     why we end up coming with the ideas that we do for coding purposes.`,
     image: project5,
     href: "https://sortingthroughchaos.netlify.app/",
