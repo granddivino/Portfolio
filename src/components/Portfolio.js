@@ -15,8 +15,8 @@ import project1 from "../images/KarenFam.jpg";
 import project2 from "../images/FiveSomewhere.jpg";
 import project3 from "../images/Petflix.jpg";
 import project4 from "../images/LGBTQ.jpg";
-// import project5 from "../images/react-redux.jpg";
-// import project6 from "../images/react.png";
+import project5 from "../images/SortingThroughChaos";
+// import project6 from "../images/";
 
 const useStyles = makeStyles((theme) => ({
   mainContainer: {
